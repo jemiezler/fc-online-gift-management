@@ -35,10 +35,10 @@ export class AnswersController {
         .pipe(csv())
         .on('data', (row) => {
           results.push({
-            wristBandNumber: row.wristBandNumber?.trim(),
-            answer: row.answer?.trim(),
-            name: row.name?.trim(),
-            seatNumber: row.seatNumber?.trim() || 'Unknown',
+            wristBandNumber: row.wristBandNumber?.trim() || row.เลขที่ริสแบนด์?.trim(),
+            answer: row.answer?.trim() || row.คุณคิดว่าทีมไหนจะชนะในเกมนี้?.trim(),
+            name: row.name?.trim() || row['ชื่อ-นามสกุล']?.trim(),
+            seatNumber: row.seatNumber?.trim() || row.เลขที่นั่งในโรง?.trim(),
           });
         })
         .on('end', async () => {

@@ -14,6 +14,6 @@ export default function Page() {
       .then((res) => res.json())
       .then((json) => setData(json));
   }, []);
-  console.log("Data fetched:", data);
+  
   return <GiftTable data={data} />;
 }
